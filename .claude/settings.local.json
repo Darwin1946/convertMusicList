@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pytest tests/crawler/test_netease.py -v)",
+      "Bash(python -m pytest tests/crawler/test_netease.py -v)",
+      "Bash(python - pytest tests/crawler/test_netease.py -v)",
+      "Bash(python3 -m pytest tests/crawler/test_netease.py -v)",
+      "Bash(where python:*)",
+      "Bash(ls /c/Python*)",
+      "Read(//usr/**)",
+      "Bash(/c/Users/tangy/AppData/Local/Microsoft/WindowsApps/python3 -m pytest tests/crawler/test_netease.py -v)",
+      "Bash(ls -la /c/Python*)",
+      "Read(//c/Program Files/**)",
+      "Read(//c/Users/tangy/AppData/Local/Programs/Python/**)",
+      "Read(//c//**)",
+      "Read(//c/Python313/**)",
+      "Bash(\"/c/Users/tangy/AppData/Local/Programs/Python/Python313/python.exe\" -m pytest tests/crawler/test_netease.py -v)",
+      "Bash(\"/c/Users/tangy/AppData/Local/Programs/Python/Python313/python.exe\" -m pip install pytest requests beautifulsoup4 lxml)",
+      "Bash(pip install:*)",
+      "Bash(pytest tests/browser/test_manager.py -v)",
+      "Bash(playwright install:*)"
+    ]
+  }
+}

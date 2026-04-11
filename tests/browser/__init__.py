@@ -1,0 +1,1 @@
+# tests/browser/__init__.py
