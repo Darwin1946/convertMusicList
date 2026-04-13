@@ -23,17 +23,21 @@ if "target_playlist" not in st.session_state:
 # Step 1: 输入歌单
 st.header("Step 1: 获取歌曲列表")
 
+music_dir = st.text_input("音乐目录路径", value=r"E:\CloudMusic", placeholder="输入包含音乐文件的目录路径")
 if st.button("扫描本地音乐文件"):
-    with st.spinner("正在扫描..."):
-        try:
-            songs = scan_music_directory()
-            if not songs:
-                st.warning("未找到音乐文件")
-            else:
-                st.session_state.songs = songs
-                st.success(f"找到 {len(songs)} 首歌曲")
-        except FileNotFoundError as e:
-            st.error(str(e))
+    if not music_dir.strip():
+        st.warning("请输入目录路径")
+    else:
+        with st.spinner("正在扫描..."):
+            try:
+                songs = scan_music_directory(music_dir.strip())
+                if not songs:
+                    st.warning("未找到音乐文件")
+                else:
+                    st.session_state.songs = songs
+                    st.success(f"找到 {len(songs)} 首歌曲")
+            except FileNotFoundError as e:
+                st.error(str(e))
 
 if st.session_state.songs:
     st.write(f"歌曲列表（前10首）:")
